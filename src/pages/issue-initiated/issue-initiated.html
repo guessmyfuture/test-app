@@ -1,0 +1,378 @@
+
+<ion-header>
+
+  <ion-navbar style="text-align:center">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title align="center" class="header-title-align">Issue Initiated</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+  <ion-card style="margin-bottom: 25px;
+    border: 1px solid #00475d;
+    border-bottom-color: #00475d;
+    border-bottom: 2px solid #04769B;">
+    <ion-card-header>
+      <span style="font-size: 14px;font-weight:bold;color:#00475d">IRIS-SMRR-17000464 - Submit 4D</span><span class="pull-right"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRxcszWH5zDbxNukBxrTMR5Syw3lqtjjDGRK5RzDPCAK2gD7zdPCQ" style="width:50px;height:50px;border-radius:50%;border:1px solid #00475d;margin-top:-10px;" #myImage1 (click)="presentImage(myImage1)"></span>
+    </ion-card-header>
+    <ion-card-content  (click)="sDesc()">
+      <ion-row align="left">
+        <ion-col>
+          <ion-icon class="fa fa-calendar" style="color:#00475d"></ion-icon>&nbsp;&nbsp;<span style="font-size: 1rem;color:#00475d">4D Due Date</span>
+          <br>
+          <h2><span style="font-size: 14px;">&nbsp;&nbsp;&nbsp;Aug 21, 2017</span></h2>
+        </ion-col>
+        <ion-col>
+          <ion-icon class="fa fa-calendar" style="color:#00475d"></ion-icon>&nbsp;&nbsp;<span style="font-size: 1rem;color:#00475d">8D Due Date</span>
+          <br>
+          <h2><span style="font-size: 14px;">&nbsp;&nbsp;&nbsp;Aug 21, 2017</span></h2>
+        </ion-col>
+      </ion-row>
+      <br>
+      <ion-row align="left">
+        <ion-col>
+          <ion-icon class="fa fa-building" style="color:#00475d"></ion-icon>&nbsp;&nbsp;<span style="font-size: 1rem;color:#00475d">Issue Description</span>
+          <br>
+          <h2 *ngIf="showDesc == false"><span style="font-size: 14px;">&nbsp;&nbsp;&nbsp;Lorem ipsum is a pseudo-Latin...</span></h2>
+          <h2 *ngIf="showDesc == true"><span style="font-size: 14px;">&nbsp;&nbsp;&nbsp;Lorem ipsum is a pseudo-Latin text used in web design, typography, layout, and printing in place of English to emphasise design elements over content. It's also called placeholder (or filler) text. It's a convenient tool for mock-ups. It helps to outline the visual elements of a document or presentation, eg typography, font, or layout. Lorem ipsum is mostly a part of a Latin text by the classical author and philosopher Cicero.</span></h2>
+        </ion-col>
+      </ion-row>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card style="margin-bottom: 25px;
+    border: 1px solid #04769B;
+    border-bottom-color: #04769B;
+    border-bottom: 2px solid #04769B;">
+    <ion-card-header>
+      <span style="font-size: 14px;font-weight:bold;color:#00475d">IRIS-DMR-17000233 - Submit 8D</span><span class="pull-right"><img src="http://www.adient.com/-/media/adient/shared/media/press-releases/2017/june/media_thumbnail_removableseatcover.ashx" style="width:50px;height:50px;border-radius:50%;border:1px solid #00475d;margin-top:-10px;" #myImage (click)="presentImage(myImage)"></span>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-row align="left">
+        <ion-col>
+          <ion-icon class="fa fa-calendar" style="color:#00475d"></ion-icon>&nbsp;&nbsp;<span style="font-size: 1rem;color:#00475d">4D Due Date</span>
+          <br>
+          <h2><span style="font-size: 14px;">&nbsp;&nbsp;&nbsp;Aug 21, 2017</span></h2>
+        </ion-col>
+        <ion-col>
+          <ion-icon class="fa fa-calendar" style="color:#00475d"></ion-icon>&nbsp;&nbsp;<span style="font-size: 1rem;color:#00475d">8D Due Date</span>
+          <br>
+          <h2><span style="font-size: 14px;">&nbsp;&nbsp;&nbsp;Aug 21, 2017</span></h2>
+        </ion-col>
+      </ion-row>
+      <br>
+      <ion-row align="left">
+        <ion-col>
+          <ion-icon class="fa fa-building" style="color:#00475d"></ion-icon>&nbsp;&nbsp;<span style="font-size: 1rem;color:#00475d">Issue Description</span>
+          <br>
+          <h2><span style="font-size: 14px;">&nbsp;&nbsp;&nbsp;Lorem ipsum is a pseudo-Latin</span></h2>
+        </ion-col>
+      </ion-row>
+    </ion-card-content>
+  </ion-card>
+  <ion-card style="margin-bottom: 25px;
+    border-bottom-color: #00475d;
+    border-bottom: 2px solid #04769B;">
+    <ion-card-header>
+      <span style="font-size: 14px;font-weight:bold;color:#00475d">IRIS-CI-17000098 - Submit 4D</span><span class="pull-right"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRxcszWH5zDbxNukBxrTMR5Syw3lqtjjDGRK5RzDPCAK2gD7zdPCQ" style="width:50px;height:50px;border-radius:50%;border:1px solid #00475d;margin-top:-10px;" #myImage1 (click)="presentImage(myImage1)"></span>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-row align="left">
+        <ion-col>
+          <ion-icon class="fa fa-calendar" style="color:#00475d"></ion-icon>&nbsp;&nbsp;<span style="font-size: 1rem;color:#00475d">4D Due Date</span>
+          <br>
+          <h2><span style="font-size: 14px;">&nbsp;&nbsp;&nbsp;Aug 21, 2017</span></h2>
+        </ion-col>
+        <ion-col>
+          <ion-icon class="fa fa-calendar" style="color:#00475d"></ion-icon>&nbsp;&nbsp;<span style="font-size: 1rem;color:#00475d">8D Due Date</span>
+          <br>
+          <h2><span style="font-size: 14px;">&nbsp;&nbsp;&nbsp;Aug 21, 2017</span></h2>
+        </ion-col>
+      </ion-row>
+      <br>
+      <ion-row align="left">
+        <ion-col>
+          <ion-icon class="fa fa-building" style="color:#00475d"></ion-icon>&nbsp;&nbsp;<span style="font-size: 1rem;color:#00475d">Issue Description</span>
+          <br>
+          <h2><span style="font-size: 14px;">&nbsp;&nbsp;&nbsp;Lorem ipsum is a pseudo-Latin</span></h2>
+        </ion-col>
+      </ion-row>
+    </ion-card-content>
+  </ion-card>
+  <ion-card style="margin-bottom: 25px;
+    border: 1px solid #00475d;
+    border-bottom-color: #00475d;
+    border-bottom: 2px solid #04769B;">
+    <ion-card-header>
+      <span style="font-size: 14px;font-weight:bold;color:#00475d">IRIS-SCB-17000222 - Initial SCB</span><span class="pull-right"><img src="http://www.adient.com/-/media/adient/shared/media/press-releases/2017/june/media_thumbnail_removableseatcover.ashx" style="width:50px;height:50px;border-radius:50%;border:1px solid #00475d;margin-top:-10px;" #myImage (click)="presentImage(myImage)"></span>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-row align="left">
+        <ion-col>
+          <ion-icon class="fa fa-calendar" style="color:#00475d"></ion-icon>&nbsp;&nbsp;<span style="font-size: 1rem;color:#00475d">4D Due Date</span>
+          <br>
+          <h2><span style="font-size: 14px;">&nbsp;&nbsp;&nbsp;Aug 21, 2017</span></h2>
+        </ion-col>
+        <ion-col>
+          <ion-icon class="fa fa-calendar" style="color:#00475d"></ion-icon>&nbsp;&nbsp;<span style="font-size: 1rem;color:#00475d">8D Due Date</span>
+          <br>
+          <h2><span style="font-size: 14px;">&nbsp;&nbsp;&nbsp;Aug 21, 2017</span></h2>
+        </ion-col>
+      </ion-row>
+      <br>
+      <ion-row align="left">
+        <ion-col>
+          <ion-icon class="fa fa-building" style="color:#00475d"></ion-icon>&nbsp;&nbsp;<span style="font-size: 1rem;color:#00475d">Issue Description</span>
+          <br>
+          <h2><span style="font-size: 14px;">&nbsp;&nbsp;&nbsp;Lorem ipsum is a pseudo-Latin</span></h2>
+        </ion-col>
+      </ion-row>
+    </ion-card-content>
+  </ion-card>
+  <ion-card style="margin-bottom: 25px;
+    border: 1px solid #00475d;
+    border-bottom-color: #00475d;
+    border-bottom: 2px solid #04769B;">
+    <ion-card-header>
+      <span style="font-size: 14px;font-weight:bold;color:#00475d">IRIS-SMRR-17000676 - Review SMRR</span><span class="pull-right"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRxcszWH5zDbxNukBxrTMR5Syw3lqtjjDGRK5RzDPCAK2gD7zdPCQ" style="width:50px;height:50px;border-radius:50%;border:1px solid #00475d;margin-top:-10px;" #myImage1 (click)="presentImage(myImage1)"></span>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-row align="left">
+        <ion-col>
+          <ion-icon class="fa fa-calendar" style="color:#00475d"></ion-icon>&nbsp;&nbsp;<span style="font-size: 1rem;color:#00475d">4D Due Date</span>
+          <br>
+          <h2><span style="font-size: 14px;">&nbsp;&nbsp;&nbsp;Aug 21, 2017</span></h2>
+        </ion-col>
+        <ion-col>
+          <ion-icon class="fa fa-calendar" style="color:#00475d"></ion-icon>&nbsp;&nbsp;<span style="font-size: 1rem;color:#00475d">8D Due Date</span>
+          <br>
+          <h2><span style="font-size: 14px;">&nbsp;&nbsp;&nbsp;Aug 21, 2017</span></h2>
+        </ion-col>
+      </ion-row>
+      <br>
+      <ion-row align="left">
+        <ion-col>
+          <ion-icon class="fa fa-building" style="color:#00475d"></ion-icon>&nbsp;&nbsp;<span style="font-size: 1rem;color:#00475d">Issue Description</span>
+          <br>
+          <h2><span style="font-size: 14px;">&nbsp;&nbsp;&nbsp;Lorem ipsum is a pseudo-Latin</span></h2>
+        </ion-col>
+      </ion-row>
+    </ion-card-content>
+  </ion-card>
+  <ion-card style="margin-bottom: 25px;
+    border: 1px solid #00475d;
+    border-bottom-color: #00475d;
+    border-bottom: 2px solid #04769B;">
+    <ion-card-header>
+      <span style="font-size: 14px;font-weight:bold;color:#00475d">IRIS-SMRR-17000333 - Finalize SMRR</span><span class="pull-right"><img src="http://www.adient.com/-/media/adient/shared/media/press-releases/2017/june/media_thumbnail_removableseatcover.ashx" style="width:50px;height:50px;border-radius:50%;border:1px solid #00475d;margin-top:-10px;" #myImage (click)="presentImage(myImage)"></span>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-row align="left">
+        <ion-col>
+          <ion-icon class="fa fa-calendar" style="color:#00475d"></ion-icon>&nbsp;&nbsp;<span style="font-size: 1rem;color:#00475d">4D Due Date</span>
+          <br>
+          <h2><span style="font-size: 14px;">&nbsp;&nbsp;&nbsp;Aug 21, 2017</span></h2>
+        </ion-col>
+        <ion-col>
+          <ion-icon class="fa fa-calendar" style="color:#00475d"></ion-icon>&nbsp;&nbsp;<span style="font-size: 1rem;color:#00475d">8D Due Date</span>
+          <br>
+          <h2><span style="font-size: 14px;">&nbsp;&nbsp;&nbsp;Aug 21, 2017</span></h2>
+        </ion-col>
+      </ion-row>
+      <br>
+      <ion-row align="left">
+        <ion-col>
+          <ion-icon class="fa fa-building" style="color:#00475d"></ion-icon>&nbsp;&nbsp;<span style="font-size: 1rem;color:#00475d">Issue Description</span>
+          <br>
+          <h2><span style="font-size: 14px;">&nbsp;&nbsp;&nbsp;Lorem ipsum is a pseudo-Latin</span></h2>
+        </ion-col>
+      </ion-row>
+    </ion-card-content>
+  </ion-card>
+  <ion-card style="margin-bottom: 25px;
+    border: 1px solid #00475d;
+    border-bottom-color: #00475d;
+    border-bottom: 2px solid #04769B;">
+    <ion-card-header>
+      <span style="font-size: 14px;font-weight:bold;color:#00475d">IRIS-SMRR-17000464 - Submit 4D</span><span class="pull-right"><img src="http://www.adient.com/-/media/adient/shared/media/press-releases/2017/june/media_thumbnail_removableseatcover.ashx" style="width:50px;height:50px;border-radius:50%;border:1px solid #00475d;margin-top:-10px;" #myImage (click)="presentImage(myImage)"></span>
+    </ion-card-header>
+    <ion-card-content  (click)="sDesc()">
+      <ion-row align="left">
+        <ion-col>
+          <ion-icon class="fa fa-calendar" style="color:#00475d"></ion-icon>&nbsp;&nbsp;<span style="font-size: 1rem;color:#00475d">4D Due Date</span>
+          <br>
+          <h2><span style="font-size: 14px;">&nbsp;&nbsp;&nbsp;Aug 21, 2017</span></h2>
+        </ion-col>
+        <ion-col>
+          <ion-icon class="fa fa-calendar" style="color:#00475d"></ion-icon>&nbsp;&nbsp;<span style="font-size: 1rem;color:#00475d">8D Due Date</span>
+          <br>
+          <h2><span style="font-size: 14px;">&nbsp;&nbsp;&nbsp;Aug 21, 2017</span></h2>
+        </ion-col>
+      </ion-row>
+      <br>
+      <ion-row align="left">
+        <ion-col>
+          <ion-icon class="fa fa-building" style="color:#00475d"></ion-icon>&nbsp;&nbsp;<span style="font-size: 1rem;color:#00475d">Issue Description</span>
+          <br>
+          <h2 *ngIf="showDesc == false"><span style="font-size: 14px;">&nbsp;&nbsp;&nbsp;Lorem ipsum is a pseudo-Latin...</span></h2>
+          <h2 *ngIf="showDesc == true"><span style="font-size: 14px;">&nbsp;&nbsp;&nbsp;Lorem ipsum is a pseudo-Latin text used in web design, typography, layout, and printing in place of English to emphasise design elements over content. It's also called placeholder (or filler) text. It's a convenient tool for mock-ups. It helps to outline the visual elements of a document or presentation, eg typography, font, or layout. Lorem ipsum is mostly a part of a Latin text by the classical author and philosopher Cicero.</span></h2>
+        </ion-col>
+      </ion-row>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card style="margin-bottom: 25px;
+    border: 1px solid #00475d;
+    border-bottom-color: #00475d;
+    border-bottom: 2px solid #04769B;">
+    <ion-card-header>
+      <span style="font-size: 14px;font-weight:bold;color:#00475d">IRIS-DMR-17000233 - Submit 8D</span><span class="pull-right"><img src="http://www.adient.com/-/media/adient/shared/media/press-releases/2017/june/media_thumbnail_removableseatcover.ashx" style="width:50px;height:50px;border-radius:50%;border:1px solid #00475d;margin-top:-10px;" #myImage (click)="presentImage(myImage)"></span>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-row align="left">
+        <ion-col>
+          <ion-icon class="fa fa-calendar" style="color:#00475d"></ion-icon>&nbsp;&nbsp;<span style="font-size: 1rem;color:#00475d">4D Due Date</span>
+          <br>
+          <h2><span style="font-size: 14px;">&nbsp;&nbsp;&nbsp;Aug 21, 2017</span></h2>
+        </ion-col>
+        <ion-col>
+          <ion-icon class="fa fa-calendar" style="color:#00475d"></ion-icon>&nbsp;&nbsp;<span style="font-size: 1rem;color:#00475d">8D Due Date</span>
+          <br>
+          <h2><span style="font-size: 14px;">&nbsp;&nbsp;&nbsp;Aug 21, 2017</span></h2>
+        </ion-col>
+      </ion-row>
+      <br>
+      <ion-row align="left">
+        <ion-col>
+          <ion-icon class="fa fa-building" style="color:#00475d"></ion-icon>&nbsp;&nbsp;<span style="font-size: 1rem;color:#00475d">Issue Description</span>
+          <br>
+          <h2><span style="font-size: 14px;">&nbsp;&nbsp;&nbsp;Lorem ipsum is a pseudo-Latin</span></h2>
+        </ion-col>
+      </ion-row>
+    </ion-card-content>
+  </ion-card>
+  <ion-card style="margin-bottom: 25px;
+    border: 1px solid #00475d;
+    border-bottom-color: #00475d;
+    border-bottom: 2px solid #04769B;">
+    <ion-card-header>
+      <span style="font-size: 14px;font-weight:bold;color:#00475d">IRIS-CI-17000098 - Submit 4D</span><span class="pull-right"><img src="http://www.adient.com/-/media/adient/shared/media/press-releases/2017/june/media_thumbnail_removableseatcover.ashx" style="width:50px;height:50px;border-radius:50%;border:1px solid #00475d;margin-top:-10px;" #myImage (click)="presentImage(myImage)"></span>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-row align="left">
+        <ion-col>
+          <ion-icon class="fa fa-calendar" style="color:#00475d"></ion-icon>&nbsp;&nbsp;<span style="font-size: 1rem;color:#00475d">4D Due Date</span>
+          <br>
+          <h2><span style="font-size: 14px;">&nbsp;&nbsp;&nbsp;Aug 21, 2017</span></h2>
+        </ion-col>
+        <ion-col>
+          <ion-icon class="fa fa-calendar" style="color:#00475d"></ion-icon>&nbsp;&nbsp;<span style="font-size: 1rem;color:#00475d">8D Due Date</span>
+          <br>
+          <h2><span style="font-size: 14px;">&nbsp;&nbsp;&nbsp;Aug 21, 2017</span></h2>
+        </ion-col>
+      </ion-row>
+      <br>
+      <ion-row align="left">
+        <ion-col>
+          <ion-icon class="fa fa-building" style="color:#00475d"></ion-icon>&nbsp;&nbsp;<span style="font-size: 1rem;color:#00475d">Issue Description</span>
+          <br>
+          <h2><span style="font-size: 14px;">&nbsp;&nbsp;&nbsp;Lorem ipsum is a pseudo-Latin</span></h2>
+        </ion-col>
+      </ion-row>
+    </ion-card-content>
+  </ion-card>
+  <ion-card style="margin-bottom: 25px;
+    border: 1px solid #00475d;
+    border-bottom-color: #00475d;
+    border-bottom: 2px solid #04769B;">
+    <ion-card-header>
+      <span style="font-size: 14px;font-weight:bold;color:#00475d">IRIS-SCB-17000222 - Initial SCB</span><span class="pull-right"><img src="http://www.adient.com/-/media/adient/shared/media/press-releases/2017/june/media_thumbnail_removableseatcover.ashx" style="width:50px;height:50px;border-radius:50%;border:1px solid #00475d;margin-top:-10px;" #myImage (click)="presentImage(myImage)"></span>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-row align="left">
+        <ion-col>
+          <ion-icon class="fa fa-calendar" style="color:#00475d"></ion-icon>&nbsp;&nbsp;<span style="font-size: 1rem;color:#00475d">4D Due Date</span>
+          <br>
+          <h2><span style="font-size: 14px;">&nbsp;&nbsp;&nbsp;Aug 21, 2017</span></h2>
+        </ion-col>
+        <ion-col>
+          <ion-icon class="fa fa-calendar" style="color:#00475d"></ion-icon>&nbsp;&nbsp;<span style="font-size: 1rem;color:#00475d">8D Due Date</span>
+          <br>
+          <h2><span style="font-size: 14px;">&nbsp;&nbsp;&nbsp;Aug 21, 2017</span></h2>
+        </ion-col>
+      </ion-row>
+      <br>
+      <ion-row align="left">
+        <ion-col>
+          <ion-icon class="fa fa-building" style="color:#00475d"></ion-icon>&nbsp;&nbsp;<span style="font-size: 1rem;color:#00475d">Issue Description</span>
+          <br>
+          <h2><span style="font-size: 14px;">&nbsp;&nbsp;&nbsp;Lorem ipsum is a pseudo-Latin</span></h2>
+        </ion-col>
+      </ion-row>
+    </ion-card-content>
+  </ion-card>
+  <ion-card style="margin-bottom: 25px;
+    border: 1px solid #00475d;
+    border-bottom-color: #00475d;
+    border-bottom: 2px solid #04769B;">
+    <ion-card-header>
+      <span style="font-size: 14px;font-weight:bold;color:#00475d">IRIS-SMRR-17000676 - Review SMRR</span><span class="pull-right"><img src="http://www.adient.com/-/media/adient/shared/media/press-releases/2017/june/media_thumbnail_removableseatcover.ashx" style="width:50px;height:50px;border-radius:50%;border:1px solid #00475d;margin-top:-10px;" #myImage (click)="presentImage(myImage)"></span>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-row align="left">
+        <ion-col>
+          <ion-icon class="fa fa-calendar" style="color:#00475d"></ion-icon>&nbsp;&nbsp;<span style="font-size: 1rem;color:#00475d">4D Due Date</span>
+          <br>
+          <h2><span style="font-size: 14px;">&nbsp;&nbsp;&nbsp;Aug 21, 2017</span></h2>
+        </ion-col>
+        <ion-col>
+          <ion-icon class="fa fa-calendar" style="color:#00475d"></ion-icon>&nbsp;&nbsp;<span style="font-size: 1rem;color:#00475d">8D Due Date</span>
+          <br>
+          <h2><span style="font-size: 14px;">&nbsp;&nbsp;&nbsp;Aug 21, 2017</span></h2>
+        </ion-col>
+      </ion-row>
+      <br>
+      <ion-row align="left">
+        <ion-col>
+          <ion-icon class="fa fa-building" style="color:#00475d"></ion-icon>&nbsp;&nbsp;<span style="font-size: 1rem;color:#00475d">Issue Description</span>
+          <br>
+          <h2><span style="font-size: 14px;">&nbsp;&nbsp;&nbsp;Lorem ipsum is a pseudo-Latin</span></h2>
+        </ion-col>
+      </ion-row>
+    </ion-card-content>
+  </ion-card>
+  <ion-card style="margin-bottom: 25px;
+    border: 1px solid #00475d;
+    border-bottom-color: #00475d;
+    border-bottom: 2px solid #04769B;">
+    <ion-card-header>
+      <span style="font-size: 14px;font-weight:bold;color:#00475d">IRIS-SMRR-17000333 - Finalize SMRR</span><span class="pull-right"><img src="http://www.adient.com/-/media/adient/shared/media/press-releases/2017/june/media_thumbnail_removableseatcover.ashx" style="width:50px;height:50px;border-radius:50%;border:1px solid #00475d;margin-top:-10px;" #myImage (click)="presentImage(myImage)"></span>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-row align="left">
+        <ion-col>
+          <ion-icon class="fa fa-calendar" style="color:#00475d"></ion-icon>&nbsp;&nbsp;<span style="font-size: 1rem;color:#00475d">4D Due Date</span>
+          <br>
+          <h2><span style="font-size: 14px;">&nbsp;&nbsp;&nbsp;Aug 21, 2017</span></h2>
+        </ion-col>
+        <ion-col>
+          <ion-icon class="fa fa-calendar" style="color:#00475d"></ion-icon>&nbsp;&nbsp;<span style="font-size: 1rem;color:#00475d">8D Due Date</span>
+          <br>
+          <h2><span style="font-size: 14px;">&nbsp;&nbsp;&nbsp;Aug 21, 2017</span></h2>
+        </ion-col>
+      </ion-row>
+      <br>
+      <ion-row align="left">
+        <ion-col>
+          <ion-icon class="fa fa-building" style="color:#00475d"></ion-icon>&nbsp;&nbsp;<span style="font-size: 1rem;color:#00475d">Issue Description</span>
+          <br>
+          <h2><span style="font-size: 14px;">&nbsp;&nbsp;&nbsp;Lorem ipsum is a pseudo-Latin</span></h2>
+        </ion-col>
+      </ion-row>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

@@ -1,0 +1,59 @@
+<div id="custom-overlay" [style.display]="splash ? 'flex': 'none'">
+  <div class="flb">
+    <div class="Aligner-item Aligner-item--top"></div>
+    <img src="assets/images/splash.gif">
+    <div class="Aligner-item Aligner-item--bottom"></div>
+  </div>
+</div>
+
+
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>
+      <img src="assets/images/iris.png">
+      </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <div class="slider-width">
+  <ion-slides autoplay="3000" loop class="home-slide">
+    <ion-slide>
+      <ion-img width="100%" height="200" style="height:200px;width:100%" src="http://www.underconsideration.com/brandnew/archives/adient_logo_new.png"></ion-img>
+    </ion-slide>
+    <ion-slide>
+      <ion-img width="100%" height="200" style="height:200px;width:100%" src="https://pbs.twimg.com/media/CwMucLbWEAAkJWO.jpg"></ion-img>
+    </ion-slide>
+    <ion-slide>
+      <ion-img width="100%" height="200" style="height:200px;width:100%" src="https://media.licdn.com/media-proxy/ext?w=800&h=800&hash=4sdiSdsQUBcFQO6cRZBTeXY5Nco%3D&ora=1%2CaFBCTXdkRmpGL2lvQUFBPQ%2CxAVta9Er0Vinkhwfjw8177yE41y87UNCVordEGXyD3u0qYrdf3G4eMPaeeSjuQ9HeC0clFcxLfKgRjjiD5C1LIvtf9skjsa0Io24ZxUBbFI8lWxI"></ion-img>
+    </ion-slide>
+    <ion-slide>
+      <ion-img width="100%" height="200" style="height:200px;width:100%" src="https://media.licdn.com/media-proxy/ext?w=800&h=800&hash=%2F%2FX4F57J24YBosFeqqtDK%2BqUdVE%3D&ora=1%2CaFBCTXdkRmpGL2lvQUFBPQ%2CxAVta9Er0Vinkhwfjw8177yE41y87UNCVordEGXyD3u0qYrdf3Tsf8TXKLXzuVhHKi8clFFkffL5QjPiD8e0etzofNt4i8PhcY24ZxUBbFI8lWxI"></ion-img>
+    </ion-slide>
+  </ion-slides>
+  </div>
+  <br>
+  <ion-grid>
+    <ion-row align="center">
+      <ion-col col-6 (click)="navigateTo('InitiateActionPage')">
+        <div class="home-menu"><h2> <i class="fa fa-paper-plane" aria-hidden="true"></i></h2>Initiate Action</div></ion-col>
+      <ion-col col-6 (click)="navigateTo('ToDoTaskPage')">
+        <div class="home-menu"><h2> <i class="fa fa fa-flag" aria-hidden="true"></i></h2> To Do task</div></ion-col>
+    </ion-row>
+    <ion-row align="center">
+      <ion-col col-6 (click)="navigateTo('IssueInitiatedPage')">
+        <div class="home-menu"><h2> <i class="fa fa fa-briefcase" aria-hidden="true"></i></h2> Issue initiated </div></ion-col>
+      <ion-col col-6 (click)="openSearch()">
+        <div class="home-menu"><h2> <i class="fa fa-pencil-square-o" aria-hidden="true"></i></h2> IRIS Search </div></ion-col>
+    </ion-row>
+    <ion-row align="center">
+      <ion-col col-6 (click)="openUtilities()">
+        <div class="home-menu"><h2> <i class="fa fa-dollar " aria-hidden="true"></i></h2> Utilities </div></ion-col>
+      <ion-col col-6 (click)="navigateTo('DraftIssuesPage')">
+        <div class="home-menu"><h2> <i class="fa fa-info" aria-hidden="true"></i></h2> Draft Issues </div></ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

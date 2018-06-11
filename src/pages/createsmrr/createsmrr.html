@@ -1,0 +1,400 @@
+
+<ion-header>
+
+  <ion-navbar>
+    <div text-center>
+    <ion-title align="center" class="header-title-align">Create SMRR</ion-title>
+      </div>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+
+  <div>
+    <ion-segment [(ngModel)]="smrr">
+      <ion-segment-button value="issue_header">
+        <ion-icon class="fa fa-search fa-2x"></ion-icon>
+      </ion-segment-button>
+      <ion-segment-button value="issue_details">
+        <ion-icon class="fa fa-wrench fa-2x"></ion-icon>
+      </ion-segment-button>
+      <ion-segment-button value="def_classification">
+        <ion-icon class="fa fa-cog fa-2x"></ion-icon>
+      </ion-segment-button>
+      <ion-segment-button value="corrective_action">
+        <ion-icon class="fa fa-flash fa-2x"></ion-icon>
+      </ion-segment-button>
+    </ion-segment>
+  </div>
+
+  <div [ngSwitch]="smrr">
+
+    <div  *ngSwitchCase="'issue_header'">
+
+    <br>
+      <div align="center" class="home-menu" style="color: #23527c;">
+        <h2> <ion-icon class="fa fa-qrcode fa-2x" (click)="scan()"></ion-icon></h2>
+        Scan QR Code
+      </div>
+      <br>
+      <ion-card style="margin:5px">
+
+        <ion-card-content>
+          <h2> <ion-icon class="fa fa-calendar" style="color:#00475d"></ion-icon>&nbsp;<span style="font-size: 14px;font-weight:400">
+            Initiated By</span>
+           <span style="font-size: 14px;font-weight:bold">&nbsp;&nbsp;&nbsp;Sundar Ethiraj +1 616 394 8822</span></h2>
+<br>
+          <h2> <ion-icon class="fa fa-user" style="color:#00475d"></ion-icon>&nbsp;<span style="font-size: 14px;font-weight:400">
+            Date Initiated</span> <span style="font-size: 14px;font-weight:bold">&nbsp;&nbsp;&nbsp;&nbsp;{{createSmrr.dateInitiated | date: 'MMM dd, yyyy h:mma'}} ET</span></h2>
+<br>
+          <h2 *ngIf="plant"> <ion-icon class="fa fa-building" style="color:#00475d"></ion-icon>&nbsp;<span style="font-size: 14px;font-weight:400">
+            Originating Plant</span><span style="font-size: 14px;font-weight:bold">&nbsp;&nbsp;&nbsp; {{createSmrr.plant}} </span></h2>
+          <ion-item *ngIf="plant == null">
+            <ion-label>Originating Plant</ion-label>
+            <ion-select name="plant" [(ngModel)]="createSmrr.plant" required clearInput>
+              <ion-option>Adient SouthView - 0605</ion-option>
+              <ion-option>Boblingen Total - 0520</ion-option>
+              <ion-option>MapleWood-6102</ion-option>
+              <ion-option>JV-Chennai- ETJC</ion-option>
+            </ion-select>
+          </ion-item>
+        </ion-card-content>
+
+      </ion-card>
+
+
+
+  <br>
+  <ion-item>
+    <ion-label>Issue Origin</ion-label>
+    <ion-select name="category" [(ngModel)]="createSmrr.issueOrigin" required clearInput>
+      <ion-option>Adient Production</ion-option>
+      <ion-option>Customer Production</ion-option>
+      <ion-option>JCI Production</ion-option>
+      <ion-option>Pre-Launch</ion-option>
+      <ion-option>Re-Validation</ion-option>
+      <ion-option>Service</ion-option>
+      <ion-option>Warranty</ion-option>
+    </ion-select>
+  </ion-item>
+<br>
+  <ion-item>
+    <ion-label>Shift</ion-label>
+    <ion-select name="shift" [(ngModel)]="createSmrr.shift" required clearInput>
+      <ion-option>First</ion-option>
+      <ion-option>Second</ion-option>
+      <ion-option>Third</ion-option>
+      <ion-option>Fourth</ion-option>
+    </ion-select>
+  </ion-item>
+  <br>
+      <ion-item>
+        <ion-label>Severity</ion-label>
+        <ion-select name="category" [(ngModel)]="createSmrr.severity" required clearInput>
+          <ion-option>Normal</ion-option>
+          <ion-option>Critical</ion-option>
+        </ion-select>
+      </ion-item>
+  <br>
+      <div style="float:right">
+        <span (click)="listenForSpeech()"><ion-icon class="fa fa-microphone fa-2x"></ion-icon></span>
+      </div>
+  <ion-item>
+    <ion-label>Problem Statement </ion-label>
+    <ion-textarea rows="12" cols="140" max="2000" [(ngModel)]="speechList" name="description" clearInput></ion-textarea>
+  </ion-item>
+
+</div>
+    <div  *ngSwitchCase="'issue_details'">
+<br>
+      <br>
+
+      <ion-card>
+
+        <ion-card-content>
+          <h2> <ion-icon class="fa fa-briefcase" style="color:#00475d"></ion-icon>&nbsp;
+            <span style="font-size: 14px;font-weight:400">
+            Supplier</span><br>
+            <span style="font-size: 14px;font-weight:bold">&nbsp;&nbsp;&nbsp;&nbsp;Acument GmbH & Co OHG - 307479</span></h2>
+          <br>
+          <h2> <ion-icon class="fa fa-address-card" style="color:#00475d"></ion-icon>&nbsp;
+            <span style="font-size: 14px;font-weight:400">
+            Supplier Address</span><br>
+            <span style="font-size: 14px;font-weight:bold">&nbsp;&nbsp;&nbsp;&nbsp;Industriegebiet Lechrain 17-19,<br> &nbsp;&nbsp;&nbsp;&nbsp;Landsberg am Lech,86899</span></h2>
+
+        </ion-card-content>
+
+      </ion-card>
+
+      <br>
+      <ion-item (click)="showCalendar2()">
+        <ion-label><ion-icon class="fa fa-calendar" style="color:#00475d"></ion-icon> Issue Occurence Date <span class="pull-right">{{date2| date:'MMM dd, yyyy'}}</span></ion-label>
+      </ion-item>
+
+<br>
+      <ion-item>
+        <ion-label>Sorting/Rework</ion-label>
+        <ion-select name="sorting" [(ngModel)]="createSmrr.sorting" required clearInput>
+          <ion-option>3rd Party Company</ion-option>
+          <ion-option>Adient Sorting</ion-option>
+          <ion-option>Rework</ion-option>
+          <ion-option>Customer Sort</ion-option>
+          <ion-option>No Sort Required</ion-option>
+          <ion-option>Requesting Supplier</ion-option>
+        </ion-select>
+      </ion-item>
+      <br>
+      <ion-item>
+        <ion-label>MQR</ion-label>
+        <ion-select name="mqr" [(ngModel)]="createSmrr.mqr" required>
+          <ion-option>MQR I</ion-option>
+          <ion-option>MQR II</ion-option>
+          <ion-option>MQR III</ion-option>
+          <ion-option>None</ion-option>
+        </ion-select>
+      </ion-item>
+      <br>
+
+      <ion-label style="font-size: 14px;">
+      Picture Attachment
+        <span class="pull-right">
+          <ion-icon class="fa fa-camera fa-2x" (click)="takePicture('single')" style="color:#00475d"></ion-icon>&nbsp;
+        </span>
+      </ion-label>
+
+
+
+      <div>
+        <img [src]="base64Image" *ngIf="base64Image"  style="width:100px;height:100px;border-radius:50%"/>
+      </div>
+<br>
+      <ion-label style="font-size: 14px;">
+        Additional Attachments
+        <span class="pull-right">
+          <ion-icon class="fa fa-camera fa-2x" (click)="takePicture('multiple')" style="color:#00475d"></ion-icon>&nbsp;
+        </span>
+      </ion-label>
+
+      <ion-grid>
+        <ion-row align="center">
+
+        <ion-col class="col-4" *ngFor="let image of imageList"> <img [src]="image" *ngIf="image" style="width:100px;height:100px;border-radius:50%"/> </ion-col>
+</ion-row>
+        </ion-grid>
+
+    </div>
+
+    <div  *ngSwitchCase="'def_classification'">
+      <br>
+      <br>
+
+      <ion-card>
+        <ion-card-content>
+          <h2> <ion-icon class="fa fa-beer" style="color:#00475d"></ion-icon>&nbsp;
+            <span style="font-size: 14px;font-weight:400">
+            Commodity</span>
+            <span style="font-size: 14px;font-weight:bold">&nbsp;&nbsp;&nbsp;1 - Plastics</span></h2>
+          <br>
+          <h2> <ion-icon class="fa fa-bell" style="color:#00475d"></ion-icon>&nbsp;
+            <span style="font-size: 14px;font-weight:400">
+            Component</span>
+            <span style="font-size: 14px;font-weight:bold">&nbsp;&nbsp;&nbsp;&nbsp;40 - INJECTION MOLDING
+</span></h2>
+          <br>
+          <h2> <ion-icon class="fa fa-list" style="color:#00475d"></ion-icon>&nbsp;<span style="font-size: 14px;font-weight:400">
+            Classification Level 1</span>
+            <span style="font-size: 14px;font-weight:bold">&nbsp;&nbsp;&nbsp;&nbsp;1 - Appearence
+</span></h2>
+        </ion-card-content>
+      </ion-card>
+      <br>
+
+      <ion-card>
+        <ion-card-content>
+          <span class="pull-right"><ion-icon class="fa fa-pencil" style="color:#00475d"></ion-icon> Edit</span>
+          <br>
+          <h2> <ion-icon class="fa fa-th" style="color:#00475d"></ion-icon>&nbsp;
+            <span style="font-size: 14px;font-weight:400">
+            Part Number</span>
+            <span style="font-size: 14px;font-weight:bold">&nbsp;&nbsp;&nbsp;{{createSmrr.partNbr}}</span></h2>
+          <br>
+          <h2> <ion-icon class="fa fa-th-large" style="color:#00475d"></ion-icon>&nbsp;
+            <span style="font-size: 14px;font-weight:400">
+            PO Number</span>
+            <span style="font-size: 14px;font-weight:bold">&nbsp;&nbsp;&nbsp;{{createSmrr.pONbr}}</span></h2>
+          <br>
+          <h2> <ion-icon class="fa fa-indent" style="color:#00475d"></ion-icon>&nbsp;
+            <span style="font-size: 14px;font-weight:400">
+            Product Line</span>
+            <span style="font-size: 14px;font-weight:bold">&nbsp;&nbsp;&nbsp;4801 - Tata-Seat</span></h2>
+          <br>
+          <h2> <ion-icon class="fa fa-list-ul" style="color:#00475d"></ion-icon>&nbsp;
+            <span style="font-size: 14px;font-weight:400">
+            Classification Level 2</span>
+            <span style="font-size: 14px;font-weight:bold">&nbsp;&nbsp;&nbsp;116 - Missing Material</span></h2>
+        </ion-card-content>
+
+       </ion-card>
+      <ion-card>
+        <ion-card-content>
+          <span class="pull-right"><ion-icon class="fa fa-floppy-o" style="color:#00475d"></ion-icon> Save</span>
+          <br>
+          <h2> <ion-icon class="fa fa-th" style="color:#00475d"></ion-icon>&nbsp;
+            <span style="font-size: 14px;font-weight:400">
+            Part Number</span>
+            <span style="font-size: 14px;font-weight:bold">&nbsp;&nbsp;&nbsp;1932775-0000-1 ST/L AMG FRT RH</span></h2>
+          <br>
+          <h2> <ion-icon class="fa fa-th-large" style="color:#00475d"></ion-icon>&nbsp;
+            <span style="font-size: 14px;font-weight:400">
+            PO Number</span>
+            <span style="font-size: 14px;font-weight:bold">&nbsp;&nbsp;&nbsp;2465443</span></h2>
+          <br>
+          <h2> <ion-icon class="fa fa-indent" style="color:#00475d"></ion-icon>&nbsp;
+            <span style="font-size: 14px;font-weight:400">
+            Product Line</span>
+            <span style="font-size: 14px;font-weight:bold">&nbsp;&nbsp;&nbsp;4801 - Tata-Seat</span></h2>
+          <br>
+          <h2> <ion-icon class="fa fa-list-ul" style="color:#00475d"></ion-icon>&nbsp;
+            <span style="font-size: 14px;font-weight:400">
+            Classification Level 2</span>
+            <span style="font-size: 14px;font-weight:bold">&nbsp;&nbsp;&nbsp;116 - Missing Material</span></h2>
+
+<br>
+          <br>
+          <ion-label class="label label-md" >
+          <span style="    font-size: 14px;">  Initial Defect Qty&nbsp;&nbsp;&nbsp;</span>
+            <span class="pull-right"><ion-badge class="badge badge-md" style="background-color:#00475d">{{saturation}}</ion-badge></span>
+          </ion-label>
+          <ion-item style="margin-left:-20px">
+            <ion-range min="0" max="100000" [(ngModel)]="saturation" color="iris">
+              <ion-label range-left>0</ion-label>
+              <ion-label range-right>100000</ion-label>
+            </ion-range>
+          </ion-item>
+
+
+          <ion-label class="label label-md" >
+            <span style="    font-size: 14px;">Total Initial Defect Qty&nbsp;&nbsp;&nbsp;</span>
+            <span class="pull-right"><ion-badge class="badge badge-md" style="background-color:#00475d">{{saturation1}}</ion-badge></span>
+          </ion-label>
+          <ion-item style="margin-left:-20px">
+            <ion-range min="0" max="100000" [(ngModel)]="saturation1" color="iris">
+              <ion-label range-left>0</ion-label>
+              <ion-label range-right>100000</ion-label>
+            </ion-range>
+          </ion-item>
+
+
+        </ion-card-content>
+
+
+      </ion-card>
+      <br>
+      <ion-item>
+        <ion-label color="red"> Move Parts to Non-Confirming </ion-label>
+        <ion-toggle checked="false" [(ngModel)]="createSmrr.moveParts"></ion-toggle>
+      </ion-item>
+      <br>
+    </div>
+    <div  *ngSwitchCase="'corrective_action'">
+<br>
+      <br>
+      <ion-card>
+
+        <ion-card-content>
+          <h2> <ion-icon class="fa fa-user-o" style="color:#00475d"></ion-icon>&nbsp;
+            <span style="font-size: 14px;font-weight:400">
+            Issue Champion</span>
+
+            <span style="font-size: 14px;font-weight:bold">&nbsp;&nbsp;&nbsp;Sundar Ethiraj +1 616 394 8822</span></h2>
+
+        </ion-card-content>
+
+      </ion-card>
+
+      <br>
+      <ion-item>
+        <ion-label color="red"> 4D Required </ion-label>
+        <ion-toggle checked="false" [(ngModel)]="createSmrr.required_4d"></ion-toggle>
+      </ion-item>
+      <br>
+      <ion-item (click)="showCalendar()">
+        <ion-label><ion-icon class="fa fa-calendar" style="color:#00475d"></ion-icon> 4D Due Date <span class="pull-right">{{date| date:'MMM dd, yyyy'}}</span> </ion-label>
+
+      </ion-item>
+
+      <br>
+      <ion-item>
+        <ion-label> 8D Required </ion-label>
+        <ion-toggle checked="false" [(ngModel)]="createSmrr.required_8d"></ion-toggle>
+      </ion-item>
+
+    <br>
+    <ion-item (click)="showCalendar1()">
+      <ion-label><ion-icon class="fa fa-calendar" style="color:#00475d"></ion-icon> 8D Due Date <span class="pull-right">{{date1| date:'MMM dd, yyyy'}}</span></ion-label>
+      <!--<ion-datetime displayFormat="MMM DD, YYYY" ></ion-datetime>-->
+    </ion-item>
+
+    <br>
+
+      <ion-item>
+        <ion-label>8D Defect Type</ion-label>
+        <ion-select name="defectType" [(ngModel)]="createSmrr.defectType" required>
+          <ion-option>Missing Material</ion-option>
+          <ion-option>Foam</ion-option>
+        </ion-select>
+      </ion-item>
+      <br>
+      <br>
+      <h6>Added Notification List</h6>
+      <br>
+      <ion-searchbar (ionInput)="getItems($event)"></ion-searchbar>
+      <ion-list>
+        <ion-item *ngFor="let item of items1" (click)="showCard(item)">
+          {{ item.name }}
+        </ion-item>
+      </ion-list>
+      <br>
+      <ion-card *ngFor="let card of cards" style="margin-bottom: 25px;
+    border: 1.5px solid #00475d;
+    border-bottom-color: #00475d;
+    border-bottom: 3px solid #00475d;">
+
+        <ion-card-content>
+          <h2> <ion-icon class="fa fa-user-circle-o" style="color:#00475d"></ion-icon>&nbsp;<span style="font-size: 14px;font-weight:bold">&nbsp;&nbsp;&nbsp;{{card.name}}
+          </span></h2>
+          <br>
+          <h2> <ion-icon class="fa fa-user-o" style="color:#00475d"></ion-icon>&nbsp;
+            <span style="font-size: 14px;font-weight:400">
+            Title</span>
+            <span style="font-size: 14px;font-weight:bold">&nbsp;&nbsp;&nbsp;{{card.title}}</span></h2>
+<br>
+          <h2> <ion-icon class="fa fa-user-o" style="color:#00475d"></ion-icon>&nbsp;
+            <span style="font-size: 14px;font-weight:400">
+            Phone</span>
+            <span style="font-size: 14px;font-weight:bold">&nbsp;&nbsp;&nbsp;{{card.phone_nbr}}</span></h2>
+<br>
+          <h2> <ion-icon class="fa fa-user-o" style="color:#00475d"></ion-icon>&nbsp;
+            <span style="font-size: 14px;font-weight:400">
+            Email</span>
+            <span style="font-size: 14px;font-weight:bold">&nbsp;&nbsp;&nbsp;{{card.email}}</span></h2>
+
+        </ion-card-content>
+
+      </ion-card>
+      <br>
+      <br>
+
+      <div align="center">
+         <button ion-button round color="iris" (click)="presentAlert2()">Save Draft</button>
+  &nbsp;&nbsp;&nbsp;<button ion-button round color="iris" (click)="presentAlert()">Submit</button>
+      </div>
+
+
+    </div>
+
+  </div>
+</ion-content>

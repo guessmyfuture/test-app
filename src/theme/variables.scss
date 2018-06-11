@@ -1,0 +1,125 @@
+// Ionic Variables and Theming. For more info, please see:
+// http://ionicframework.com/docs/theming/
+
+// Font path is used to include ionicons,
+// roboto, and noto sans fonts
+$font-path: "../assets/fonts";
+
+
+// The app direction is used to include
+// rtl styles in your app. For more info, please see:
+// http://ionicframework.com/docs/theming/rtl-support/
+$app-direction: ltr;
+
+
+@import "ionic.globals";
+
+
+// Shared Variables
+// --------------------------------------------------
+// To customize the look and feel of this app, you can override
+// the Sass variables found in Ionic's source scss files.
+// To view all the possible Ionic variables, see:
+// http://ionicframework.com/docs/theming/overriding-ionic-variables/
+
+
+
+
+// Named Color Variables
+// --------------------------------------------------
+// Named colors makes it easy to reuse colors on various components.
+// It's highly recommended to change the default colors
+// to match your app's branding. Ionic uses a Sass map of
+// colors so you can add, rename and remove colors as needed.
+// The "primary" color is the only required color in the map.
+
+$colors: (
+  primary:    #488aff,
+  secondary:  #32db64,
+  danger:     #f53d3d,
+  light:      #f4f4f4,
+  dark:       #222,
+  red:        red,
+  iris: (
+    base: #00475d,
+    contrast: #ffffff
+    )
+);
+
+
+// App iOS Variables
+// --------------------------------------------------
+// iOS only Sass variables can go here
+
+
+
+
+// App Material Design Variables
+// --------------------------------------------------
+// Material Design only Sass variables can go here
+
+
+
+
+// App Windows Variables
+// --------------------------------------------------
+// Windows only Sass variables can go here
+
+
+
+
+// App Theme
+// --------------------------------------------------
+// Ionic apps can have different themes applied, which can
+// then be future customized. This import comes last
+// so that the above variables are used and Ionic's
+// default are overridden.
+
+@import "ionic.theme.default";
+
+
+// Ionicons
+// --------------------------------------------------
+// The premium icon font for Ionic. For more info, please see:
+// http://ionicframework.com/docs/ionicons/
+
+@import "ionic.ionicons";
+@import "font-awesome";
+
+// Fonts
+// --------------------------------------------------
+
+@import "roboto";
+@import "noto-sans";
+$text-input-md-highlight-color: #00475d;
+$toggle-md-track-height:25px;
+$toggle-md-track-width: 45px;
+$toolbar-background: #00475d;
+$spinner-md-bubbles-color: #00475d;
+$text-input-highlight-color-valid: #000;
+$text-input-placeholder-color: #00475d;
+$fab-list-button-background-color: #00475d;
+$radio-md-color-on: #00475d;
+$select-md-icon-color: #00475d;
+$select-md-color: #00475d;
+$select-md-placeholder-color: #00475d;
+$alert-md-radio-label-text-color-checked: #00475d;
+$toggle-md-track-background-color-on: #73a4b3;
+$toggle-md-handle-background-color-on: #076d8d;
+$toggle-ios-background-color-on:#73a4b3;
+$toggle-ios-handle-background-color:  #076d8d;
+$alert-ios-button-text-color: #00475d;
+$alert-md-button-text-color: #00475d;
+$segment-button-md-border-color-activated: #00475d;
+$segment-button-ios-border-color-activated: #00475d;
+$label-md-text-color-focused: #00475d;
+$label-md-text-color: #000;
+$label-ios-text-color: #000;
+$item-md-font-size:14px;
+$segment-button-ios-background-color: #00475d;
+$segment-button-ios-color-activated:#fff;
+$segment-button-ios-background-color: #fff;
+$segment-button-ios-background-color-activated: #00475d;
+$segment-button-ios-text-color: #fff;
+$segment-button-md-text-color-activated:#00475d;
+$item-ios-body-text-font-size:14px;
